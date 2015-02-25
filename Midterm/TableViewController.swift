@@ -8,7 +8,8 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, UISearchControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate
+class TableViewController: UITableViewController, UISearchControllerDelegate,
+    UISearchBarDelegate, UISearchDisplayDelegate // These two are not necessary, as they have been deprecated
 {
     
     let cellID = "ID"
@@ -33,12 +34,21 @@ class TableViewController: UITableViewController, UISearchControllerDelegate, UI
             Game(title: "Hatoful Boyfriend", genre: ["Visual Novel", "Dating Simulation", "Otome Game", "Nakige"], year: 2011),
             Game(title: "How to Survive", genre: ["Survival Horror", "Action Role-Playing"], year: 2013)
                     ]
+        
+        
+        if !searchForMe.isEmpty
+        {
+            self.searchDisplayController!.searchBar.text = searchForMe
+            self.filterContent(searchForMe)
+            searchForMe = ""
+        }
+        
         self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if tableView == self.searchDisplayController!.searchResultsTableView
+        if tableView == self.searchDisplayController!.searchResultsTableView || filteredGames.count != 0
         {
             return self.filteredGames.count
         }
@@ -54,7 +64,7 @@ class TableViewController: UITableViewController, UISearchControllerDelegate, UI
         
         var game: Game
         
-        if tableView == self.searchDisplayController!.searchResultsTableView
+        if tableView == self.searchDisplayController!.searchResultsTableView || filteredGames.count != 0
         {
             game = filteredGames[indexPath.row]
         }
@@ -145,17 +155,40 @@ class TableViewController: UITableViewController, UISearchControllerDelegate, UI
         return true
     }
     
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar)
+    {
+        self.navigationController?.navigationBar.translucent = false
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar)
+    {
+        self.navigationController?.navigationBar.translucent = true
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar)
+    {
+        let scopes = self.searchDisplayController?.searchBar.scopeButtonTitles as [String]
+        let index = self.searchDisplayController?.searchBar.selectedScopeButtonIndex as Int!
+        let selectedScope = scopes[index]
+        self.filterContent(searchBar.text, scope: selectedScope)
+    }
+    
+    
     // Although the functionality of code within this function is not ideal when using a searchbar, this is used to demonstrate the possibilities. As such, this can be expanded to create an autocomplete view of some sort, by saving the search term and reusing it when the user is typing
+//    func searchBarBookmarkButtonClicked(searchBar: UISearchBar)
+//    {
+//        var date = NSDate()
+//        var calendar = NSCalendar.currentCalendar()
+//        var components = calendar.components(.CalendarUnitYear, fromDate: date)
+//        
+//        self.games.append(Game(title: searchBar.text, genre: ["Custom"], year: components.year))
+//        println("Save search: " + searchBar.text);
+//        // Instantly reload search terms by indirectly calling shouldReloadTableForSearchString
+//        searchBar.text = "" + searchBar.text
+//    }
+    
     func searchBarBookmarkButtonClicked(searchBar: UISearchBar)
     {
-        var date = NSDate()
-        var calendar = NSCalendar.currentCalendar()
-        var components = calendar.components(.CalendarUnitYear, fromDate: date)
-        
-        self.games.append(Game(title: searchBar.text, genre: ["Custom"], year: components.year))
-        println("Save search: " + searchBar.text);
-        
-        // Instantly reload search terms by indirectly calling shouldReloadTableForSearchString
-        searchBar.text = "" + searchBar.text
+        bookmarks.append(searchBar.text)
     }
 }

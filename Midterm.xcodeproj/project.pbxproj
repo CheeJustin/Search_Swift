@@ -13,6 +13,7 @@
 		EC03AEEE1A918EF400C38CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC03AEED1A918EF400C38CF5 /* Images.xcassets */; };
 		EC03AEF11A918EF400C38CF5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC03AEEF1A918EF400C38CF5 /* LaunchScreen.xib */; };
 		EC03AEFD1A918EF400C38CF5 /* MidtermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03AEFC1A918EF400C38CF5 /* MidtermTests.swift */; };
+		ECD922661A9E2667009DA7B9 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD922651A9E2667009DA7B9 /* Bookmark.swift */; };
 		ECF06D931A94593C002A5764 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF06D921A94593C002A5764 /* Game.swift */; };
 		ECF06D951A945DC0002A5764 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF06D941A945DC0002A5764 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		EC03AEF61A918EF400C38CF5 /* MidtermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidtermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC03AEFB1A918EF400C38CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC03AEFC1A918EF400C38CF5 /* MidtermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidtermTests.swift; sourceTree = "<group>"; };
+		ECD922651A9E2667009DA7B9 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		ECF06D921A94593C002A5764 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = ../Game.swift; sourceTree = "<group>"; };
 		ECF06D941A945DC0002A5764 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 			children = (
 				ECF06D921A94593C002A5764 /* Game.swift */,
 				ECF06D941A945DC0002A5764 /* TableViewController.swift */,
+				ECD922651A9E2667009DA7B9 /* Bookmark.swift */,
 				EC03AEE61A918EF400C38CF5 /* AppDelegate.swift */,
 				EC03AEE81A918EF400C38CF5 /* ViewController.swift */,
 				EC03AEEA1A918EF400C38CF5 /* Main.storyboard */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD922661A9E2667009DA7B9 /* Bookmark.swift in Sources */,
 				EC03AEE91A918EF400C38CF5 /* ViewController.swift in Sources */,
 				EC03AEE71A918EF400C38CF5 /* AppDelegate.swift in Sources */,
 				ECF06D931A94593C002A5764 /* Game.swift in Sources */,
@@ -348,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Midterm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Midterm;
 			};
 			name = Debug;
 		};
@@ -358,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Midterm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Midterm;
 			};
 			name = Release;
 		};
@@ -376,7 +380,7 @@
 				);
 				INFOPLIST_FILE = MidtermTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MidtermTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Midterm.app/Midterm";
 			};
 			name = Debug;
@@ -391,7 +395,7 @@
 				);
 				INFOPLIST_FILE = MidtermTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MidtermTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Midterm.app/Midterm";
 			};
 			name = Release;
