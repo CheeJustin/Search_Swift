@@ -13,6 +13,8 @@
 		EC03AEEE1A918EF400C38CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC03AEED1A918EF400C38CF5 /* Images.xcassets */; };
 		EC03AEF11A918EF400C38CF5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC03AEEF1A918EF400C38CF5 /* LaunchScreen.xib */; };
 		EC03AEFD1A918EF400C38CF5 /* MidtermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03AEFC1A918EF400C38CF5 /* MidtermTests.swift */; };
+		ECF06D931A94593C002A5764 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF06D921A94593C002A5764 /* Game.swift */; };
+		ECF06D951A945DC0002A5764 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF06D941A945DC0002A5764 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		EC03AEF61A918EF400C38CF5 /* MidtermTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidtermTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC03AEFB1A918EF400C38CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC03AEFC1A918EF400C38CF5 /* MidtermTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidtermTests.swift; sourceTree = "<group>"; };
+		ECF06D921A94593C002A5764 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = ../Game.swift; sourceTree = "<group>"; };
+		ECF06D941A945DC0002A5764 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		EC03AEE31A918EF400C38CF5 /* Midterm */ = {
 			isa = PBXGroup;
 			children = (
+				ECF06D921A94593C002A5764 /* Game.swift */,
+				ECF06D941A945DC0002A5764 /* TableViewController.swift */,
 				EC03AEE61A918EF400C38CF5 /* AppDelegate.swift */,
 				EC03AEE81A918EF400C38CF5 /* ViewController.swift */,
 				EC03AEEA1A918EF400C38CF5 /* Main.storyboard */,
@@ -214,6 +220,8 @@
 			files = (
 				EC03AEE91A918EF400C38CF5 /* ViewController.swift in Sources */,
 				EC03AEE71A918EF400C38CF5 /* AppDelegate.swift in Sources */,
+				ECF06D931A94593C002A5764 /* Game.swift in Sources */,
+				ECF06D951A945DC0002A5764 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +415,7 @@
 				EC03AF021A918EF400C38CF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC03AF031A918EF400C38CF5 /* Build configuration list for PBXNativeTarget "MidtermTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +424,7 @@
 				EC03AF051A918EF400C38CF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
